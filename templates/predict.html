@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/predict">Predict</a>
+    </nav>
+    <div class="container">
+        <h2>Enter Student Details for Prediction</h2>
+        <form action="/predict_result" method="post">
+            <input type="text" name="Age" placeholder="Enter Age" required>
+            <input type="text" name="Gender" placeholder="Enter Gender (0=Female, 1=Male)" required>
+            <input type="text" name="Stream" placeholder="Enter Stream (Numeric Value)" required>
+            <input type="text" name="Internships" placeholder="Enter Number of Internships" required>
+            <input type="text" name="CGPA" placeholder="Enter CGPA" required>
+            <input type="text" name="Hostel" placeholder="Enter Hostel (0=No, 1=Yes)" required>
+            <input type="text" name="HistoryOfBacklogs" placeholder="Enter History of Backlogs (0=No, 1=Yes)" required><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>  
