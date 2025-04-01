@@ -3,6 +3,21 @@
 <head>
     <title>Predict</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        input[type="text"] {
+            width: 300px; /* Increased width for better horizontal spacing */
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            width: auto;
+        }
+        td {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -13,15 +28,40 @@
     <div class="container">
         <h2>Enter Student Details for Prediction</h2>
         <form action="/predict_result" method="post">
-            <input type="text" name="Age" placeholder="Enter Age" required>
-            <input type="text" name="Gender" placeholder="Enter Gender (0=Female, 1=Male)" required>
-            <input type="text" name="Stream" placeholder="Enter Stream (Numeric Value)" required>
-            <input type="text" name="Internships" placeholder="Enter Number of Internships" required>
-            <input type="text" name="CGPA" placeholder="Enter CGPA" required>
-            <input type="text" name="Hostel" placeholder="Enter Hostel (0=No, 1=Yes)" required>
-            <input type="text" name="HistoryOfBacklogs" placeholder="Enter History of Backlogs (0=No, 1=Yes)" required><br>
-            <input type="submit" value="Predict">
+            <table>
+                <tr>
+                    <td><label for="age">Age:</label></td>
+                    <td><input type="text" id="age" name="Age" placeholder="Enter Age" required></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender (0=Female, 1=Male):</label></td>
+                    <td><input type="text" id="gender" name="Gender" placeholder="Enter Gender" required></td>
+                </tr>
+                <tr>
+                    <td><label for="stream">Stream (Numeric Value):</label></td>
+                    <td><input type="text" id="stream" name="Stream" placeholder="Enter Stream" required></td>
+                </tr>
+                <tr>
+                    <td><label for="internships">Number of Internships:</label></td>
+                    <td><input type="text" id="internships" name="Internships" placeholder="Enter Number of Internships" required></td>
+                </tr>
+                <tr>
+                    <td><label for="cgpa">CGPA:</label></td>
+                    <td><input type="text" id="cgpa" name="CGPA" placeholder="Enter CGPA" required></td>
+                </tr>
+                <tr>
+                    <td><label for="hostel">Hostel (0=No, 1=Yes):</label></td>
+                    <td><input type="text" id="hostel" name="Hostel" placeholder="Enter Hostel" required></td>
+                </tr>
+                <tr>
+                    <td><label for="historyOfBacklogs">History of Backlogs (0=No, 1=Yes):</label></td>
+                    <td><input type="text" id="historyOfBacklogs" name="HistoryOfBacklogs" placeholder="Enter History of Backlogs" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;"><input type="submit" value="Predict"></td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>
-</html>  
+</html>
